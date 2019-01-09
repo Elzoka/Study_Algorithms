@@ -43,7 +43,7 @@ class Stack {
     }
 
     isEmpty(){
-
+        return !this.top;
     }
 }
 
@@ -57,3 +57,4 @@ console.log(myStack.peek());
 console.log(myStack.pop());
 console.log(myStack.pop());
 console.log(myStack.pop());
+console.log(myStack.isEmpty());
