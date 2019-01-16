@@ -1,7 +1,8 @@
 function bubbleSort(array){
     const length = array.length;
     for(let i = 1; i < length; i++){
-        for(let j = 0; (j + 1) < length; j++){
+        // loop to until reach (length - i), as for each loop the last i indexes gets sorted
+        for(let j = 0; j < length - i; j++){
             if(array[j] > array[j + 1]){
                 let temp = array[j+1];
                 array[j+1] = array[j];
