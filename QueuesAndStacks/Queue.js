@@ -21,8 +21,6 @@ class Queue {
         if(this.length === 0){
             this.first = this.last = newNode;
         }else{
-            console.log("=================");
-            console.log(this.last);
             this.last.next = newNode;
             this.last = newNode
         }

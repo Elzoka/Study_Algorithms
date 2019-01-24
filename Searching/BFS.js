@@ -12,11 +12,6 @@ class BinarySearchTreeWithBFS extends BinarySearchTree {
 
         newQueue.enqueue(this.root);
         
-        console.log(this.length);
-        if(this.length === 0){
-           return []; 
-        }
-
         currentNode = newQueue.peek();
 
         while(currentNode){
