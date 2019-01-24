@@ -17,6 +17,8 @@ function merge(left, right){
     const newArray = [];
     let i = 0, j = 0;
 
+    // the loop will terminate if at least one array is completely scanned
+
     // while(left[i] && right[j]) won't work as js will coerce 0 into false and will exit the while loop
     while(typeof left[i] === 'number' && typeof right[j] === 'number'){
         if(left[i] < right[j]){
@@ -27,6 +29,8 @@ function merge(left, right){
             j++;
         }
     }
+
+    // then complete the newArray with the left offs of the unfinished array
 
     while(left[i]){
         newArray.push(left[i]);

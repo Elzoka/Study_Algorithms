@@ -13,7 +13,7 @@ class Queue {
     }
 
     peek(){
-        return this.first;
+        return this.first ? this.first.value: null;
     }
 
     enqueue(value){
@@ -21,6 +21,8 @@ class Queue {
         if(this.length === 0){
             this.first = this.last = newNode;
         }else{
+            console.log("=================");
+            console.log(this.last);
             this.last.next = newNode;
             this.last = newNode
         }
@@ -34,10 +36,12 @@ class Queue {
             return null;
         }
         
-        this.first = this.first.next;
         if(this.first === this.last){
             this.last = null;
         }
+
+        this.first = this.first.next;
+
         this.length--;
         return this;
     }
@@ -47,15 +51,17 @@ class Queue {
     }
 }
 
-const myQueue = new Queue();
-console.log(myQueue.enqueue("Joy"));
-console.log(myQueue.enqueue("Matt"));
-console.log(myQueue.enqueue("Pavel"));
-console.log(myQueue.enqueue("Samir"));
-console.log(myQueue.peek());
-console.log(myQueue.dequeue());
-console.log(myQueue.dequeue());
-console.log(myQueue.isEmpty());
-console.log(myQueue.dequeue());
-console.log(myQueue.dequeue());
-console.log(myQueue.isEmpty());
+module.exports = Queue;
+
+// const myQueue = new Queue();
+// console.log(myQueue.enqueue("Joy"));
+// console.log(myQueue.enqueue("Matt"));
+// console.log(myQueue.enqueue("Pavel"));
+// console.log(myQueue.enqueue("Samir"));
+// console.log(myQueue.peek());
+// console.log(myQueue.dequeue());
+// console.log(myQueue.dequeue());
+// console.log(myQueue.isEmpty());
+// console.log(myQueue.dequeue());
+// console.log(myQueue.dequeue());
+// console.log(myQueue.isEmpty());
